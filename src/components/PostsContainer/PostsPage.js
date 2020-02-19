@@ -14,7 +14,7 @@ const PostsPage = () => {
       {/* map through data here to return a Post and pass data as props to Post */}
       {data.map(p => 
         (
-          <Post key />
+          <Post key={p.id} propsPassFromParent={p} />
         ))}
     </div>
   );

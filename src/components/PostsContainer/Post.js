@@ -9,28 +9,28 @@ import "./Posts.css";
 // pass props in this file to
 const Post = props => {
   // set up state for the likes
-  const [likes, setLikes] = useState(props.post.likes);
-  console.log("Parent props", props);
+  const [likes, setLikes] = useState(props.propsPassFromParent.likes);
+  // console.log("Parent props", props);
 
   return (
     <div className="post-border">
       <PostHeader
-        username={props.post.username}
+        username={props.propsPassFromParent.username}
         thumbnailUrl={
-          props.post.thumbnailUrl
+          props.propsPassFromParent.thumbnailUrl
         }
       />
       <div className="post-image-wrapper">
         <img
           alt="post thumbnail"
           className="post-image"
-          src={props.post.imageUrl}
+          src={props.propsPassFromParent.imageUrl}
         />
       </div>
-      <LikeSection />
+      <LikeSection likes={props.propsPassFromParent.likes} />
       <CommentSection
-        postId={props.post.imageUrl}
-        comments={props.post.comments}
+        postId={props.propsPassFromParent.imageUrl}
+        comments={props.propsPassFromParent.comments}
       />
     </div>
   );
