@@ -29,7 +29,8 @@ const Post = props => {
       </div>
       <LikeSection likes={props.propsPassFromParent.likes} />
       <CommentSection
-        postId={props.propsPassFromParent.imageUrl}
+        postImage={props.propsPassFromParent.imageUrl}
+       
         comments={props.propsPassFromParent.comments}
       />
     </div>
