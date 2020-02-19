@@ -12,6 +12,10 @@ const Post = props => {
   const [likes, setLikes] = useState(props.propsPassFromParent.likes);
   // console.log("Parent props", props);
 
+  const incrementLikes = () => {
+    setLikes(likes + 1);
+  }
+
   return (
     <div className="post-border">
       <PostHeader
@@ -27,7 +31,7 @@ const Post = props => {
           src={props.propsPassFromParent.imageUrl}
         />
       </div>
-      <LikeSection likes={props.propsPassFromParent.likes} />
+      <LikeSection likes={likes} incrementLikes={incrementLikes} />
       <CommentSection
         postImage={props.propsPassFromParent.imageUrl}
        
